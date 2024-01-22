@@ -1,0 +1,19 @@
+gates:
+  - path: "/"
+    method: "POST"
+    rules:
+      - name: "ip_restriction"
+        config:
+          allowed_ips: ["127.0.0.1", "192.168.1.1"]
+      - name: "ip_rate"
+        config:
+          limit: 5
+          duration: 30
+  - path: "/something"
+    method: "POST"
+    rules:
+      - name: "path_rate"
+        config:
+          path: "/post"
+          limit: 5
+          duration: 30
