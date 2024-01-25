@@ -4,13 +4,14 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/atanurdemir/gatekeeper/src/config"
 	"github.com/atanurdemir/gatekeeper/src/types"
 	"github.com/golang-jwt/jwt/v5"
 )
 
 func AuthMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		secretKey := "your-secret-key"
+		secretKey := config.GatekeeperConfig.JWTSecret
 		accessToken := r.Header.Get("Authorization")
 		if accessToken == "" {
 			http.Error(w, "Unauthorized", http.StatusUnauthorized)

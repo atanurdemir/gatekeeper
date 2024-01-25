@@ -10,9 +10,9 @@ import (
 var GatekeeperConfig models.AppConfig
 
 func SetupConfig() {
-	viper.SetConfigName("gates")
+	viper.SetConfigName("settings")
 	viper.SetConfigType("yaml")
-	viper.AddConfigPath("src/config")
+	viper.AddConfigPath(".")
 
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatalf("Error reading config file: %s", err)

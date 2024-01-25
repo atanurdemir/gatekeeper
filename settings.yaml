@@ -17,3 +17,4 @@ gates:
           path: "/post"
           limit: 5
           duration: 30
+jwt_secret: "your-secret-key"

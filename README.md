@@ -42,7 +42,7 @@ By configuring and customizing these gates, you can fine-tune how Gatekeeper han
 
 1. **Setting up the configuration file:**
 
-Modify the `gates.yaml` file in the src/config directory to define your access control rules. Here's an example configuration:
+Modify the `settings.yaml` file in the root directory to define your access control rules. Here's an example configuration:
 
 ```yaml
 gates:
